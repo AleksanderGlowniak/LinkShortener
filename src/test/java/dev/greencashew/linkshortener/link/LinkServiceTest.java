@@ -56,4 +56,5 @@ class LinkServiceTest {
         //when //then
         assertThrows(LinkAlreadyExistsException.class, () -> linkService.createLink(new LinkDto(duplicatedId, "another email", "another target", null, 0)));
     }
+
 }
