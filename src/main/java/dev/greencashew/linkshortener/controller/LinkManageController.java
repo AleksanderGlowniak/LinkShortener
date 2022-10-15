@@ -1,7 +1,7 @@
 package dev.greencashew.linkshortener.controller;
 
-import dev.greencashew.linkshortener.dto.LinkDto;
-import dev.greencashew.linkshortener.link.LinkService;
+import dev.greencashew.linkshortener.link.api.LinkDto;
+import dev.greencashew.linkshortener.link.api.LinkService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

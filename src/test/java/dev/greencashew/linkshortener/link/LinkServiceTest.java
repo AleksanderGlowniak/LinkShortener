@@ -1,9 +1,10 @@
 package dev.greencashew.linkshortener.link;
 
-import dev.greencashew.linkshortener.dto.LinkDto;
+import dev.greencashew.linkshortener.link.api.LinkDto;
 
-import dev.greencashew.linkshortener.link.exceptions.LinkAlreadyExistsException;
-import dev.greencashew.linkshortener.link.exceptions.LinkNotFoundException;
+import dev.greencashew.linkshortener.link.api.LinkService;
+import dev.greencashew.linkshortener.link.api.exceptions.LinkAlreadyExistsException;
+import dev.greencashew.linkshortener.link.api.exceptions.LinkNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,7 +17,7 @@ class LinkServiceTest {
 
     @BeforeEach
     void setUp() {
-        linkService = new LinkServiceImpl();
+        linkService = new LinkServiceImpl(new LinkInMemoryRepository());
     }
 
     @Test // 2 testy w jednym a powinny być 2 osobne
