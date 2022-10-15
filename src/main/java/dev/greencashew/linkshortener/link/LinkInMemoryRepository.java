@@ -2,7 +2,9 @@ package dev.greencashew.linkshortener.link;
 
 import org.apache.commons.lang3.NotImplementedException;
 
+import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -21,7 +23,8 @@ class LinkInMemoryRepository implements LinkRepository {
 
     @Override
     public <S extends LinkEntity> Iterable<S> saveAll(final Iterable<S> entities) {
-        throw new NotImplementedException();
+        entities.forEach(s -> save(s));
+        return entities;
     }
 
     @Override
@@ -71,6 +74,11 @@ class LinkInMemoryRepository implements LinkRepository {
 
     @Override
     public void deleteAll() {
+        throw new NotImplementedException();
+    }
+
+    @Override
+    public List<LinkEntity> findLinksBeforeDate(final LocalDate currentDate) {
         throw new NotImplementedException();
     }
 }
