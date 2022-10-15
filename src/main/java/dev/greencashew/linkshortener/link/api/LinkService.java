@@ -1,6 +1,4 @@
-package dev.greencashew.linkshortener.link;
-
-import dev.greencashew.linkshortener.dto.LinkDto;
+package dev.greencashew.linkshortener.link.api;
 
 public interface LinkService {
     LinkDto createLink(LinkDto toDto);

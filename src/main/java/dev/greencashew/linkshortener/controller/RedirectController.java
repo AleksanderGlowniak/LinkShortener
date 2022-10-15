@@ -1,6 +1,6 @@
 package dev.greencashew.linkshortener.controller;
 
-import dev.greencashew.linkshortener.link.LinkService;
+import dev.greencashew.linkshortener.link.api.LinkService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
