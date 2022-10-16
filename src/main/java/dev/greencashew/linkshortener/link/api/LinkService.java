@@ -1,6 +1,5 @@
 package dev.greencashew.linkshortener.link.api;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 public interface LinkService {
@@ -14,4 +13,10 @@ public interface LinkService {
     LinkDto getLinkById(String id);
 
 
+    /**
+     * @param id
+     * @param email
+     * @return returns {@code true} when link was found and deleted
+     */
+    boolean deleteLink(String id, String email);
 }
