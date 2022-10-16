@@ -1,5 +1,6 @@
 package dev.greencashew.linkshortener.link;
 
+import dev.greencashew.linkshortener.link.api.LinkDto;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -13,5 +14,7 @@ interface LinkRepository extends CrudRepository<LinkEntity, String> {
     @Query("SELECT e FROM LinkEntity e WHERE e.expirationDate < ?1")
     List<LinkEntity> findLinksBeforeDate(LocalDate currentDate);
 
+
+    List<LinkEntity> findAllByVisitsGreaterThan(Integer visits);
 
 }
