@@ -17,19 +17,24 @@ class LinkManageController {
     private final LinkService linkService;
 
 
-
     @PostMapping
     @ResponseBody
     @ResponseStatus(HttpStatus.CREATED)
     LinkDto createLink(@Valid @RequestBody CreateLinkDto link) {
         return linkService.createLink(link.toDto());
-        }
-
-        @ResponseBody
-        @ResponseStatus(HttpStatus.OK)
-        @GetMapping("/visits/{visits}")
-        List<LinkDto> getLinksForVisitsHigherThan(@PathVariable Integer visits) {
-            return linkService.getLinksForVisitsHigherThan(visits);
     }
 
+    @ResponseBody
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/visits/{visits}")
+    List<LinkDto> getLinksForVisitsHigherThan(@PathVariable Integer visits) {
+        return linkService.getLinksForVisitsHigherThan(visits);
+    }
+
+    @ResponseBody
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/{id}")
+    LinkDto getLinksById(@PathVariable String id) {
+        return linkService.getLinkById(id);
+    }
 }

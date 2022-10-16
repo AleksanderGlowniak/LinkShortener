@@ -32,8 +32,11 @@ class GlobalControllerAdvicer {
                 .collect(Collectors.joining(", "));
         return new ExceptionResponse(fieldErrors);
     }
+
+    @ResponseBody
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(Exception.class)
-    ExceptionResponse handError (Exception error){
+    ExceptionResponse handError(Exception error) {
         return new ExceptionResponse(error.getMessage());
     }
 
